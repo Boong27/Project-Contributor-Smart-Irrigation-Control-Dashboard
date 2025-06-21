@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BOONG – Smart Irrigation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="main-container">
+    <!-- Nền launch.jpg -->
+    <div class="background"></div>
+
+    <!-- Lời chào -->
+    <div class="left-panel">
+      <h1>Welcome to <span>BOONG</span></h1>
+      <p>Smart Irrigation System for Smart Farming</p>
+    </div>
+
+    <!-- Bảng điều khiển -->
+    <div class="right-panel">
+      <h2>Dashboard</h2>
+
+      <div class="control-group">
+        <h4>🌱 Sensor Readings</h4>
+        <p>Temp: <span id="temp">--</span>°C | Humidity: <span id="humidity">--</span>%</p>
+        <p>Light: <span id="light">--</span> lux</p>
+        <button onclick="loadSensor()">Refresh</button>
+      </div>
+
+      <div class="control-group">
+        <h4>📍 Khu vực trồng cây</h4>
+        <button onclick="toggleMap()">Xem bản đồ khu vực</button>
+        <div id="mapArea" style="display: none; margin-top: 10px;">
+          <img src="assets/map.jpg" alt="Farm Map" class="map-image" />
+          <p>Chọn Camera:</p>
+          <button onclick="showCamera('A')">Zone A</button>
+          <button onclick="showCamera('B')">Zone B</button>
+          <button onclick="showCamera('C')">Zone C</button>
+          <div id="cameraView"></div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h4>🚨 Pump Control</h4>
+        <p>Status: <span id="pumpStatus">ON</span></p>
+        <button class="danger" onclick="emergencyStop()">Ngắt khẩn cấp</button>
+        <p id="emergencyMsg"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
